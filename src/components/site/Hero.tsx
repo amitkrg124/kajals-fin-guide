@@ -12,7 +12,13 @@ const badges = [
   { icon: MapPin, label: "Delhi Based" },
 ];
 
-const floating = [
+const floating: {
+  label: string;
+  top: string;
+  left?: string;
+  right?: string;
+  delay: number;
+}[] = [
   { label: "GST", top: "8%", left: "-6%", delay: 0 },
   { label: "ITR", top: "30%", left: "-10%", delay: 0.4 },
   { label: "TDS", top: "62%", left: "-4%", delay: 0.8 },
