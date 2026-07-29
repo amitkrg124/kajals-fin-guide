@@ -1,24 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { SiteNav } from "@/components/site/SiteNav";
+import { Hero } from "@/components/site/Hero";
+import { Stats } from "@/components/site/Stats";
+import { About } from "@/components/site/About";
+import { Services } from "@/components/site/Services";
+import { WhyChoose, Process, Industries } from "@/components/site/Trust";
+import { ClientLogos, Testimonials, GrowthBanner } from "@/components/site/SocialProof";
+import { FAQ } from "@/components/site/FAQ";
+import { Contact } from "@/components/site/Contact";
+import { Footer, FloatingActions } from "@/components/site/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Accounting & Tax Consultant in Delhi | Kajal";
+const DESCRIPTION =
+  "Kajal offers GST, income tax, TDS, bookkeeping, payroll and MSME registration services in Delhi for individuals, freelancers, startups and businesses.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteNav />
+      <main>
+        <Hero />
+        <Stats />
+        <About />
+        <Services />
+        <WhyChoose />
+        <Process />
+        <Industries />
+        <ClientLogos />
+        <Testimonials />
+        <FAQ />
+        <GrowthBanner />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingActions />
+      <Toaster />
     </div>
   );
 }
