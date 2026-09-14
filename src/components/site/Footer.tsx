@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUp, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { BrandLogo } from "./BrandLogo";
 
 const quickLinks = [
-  { href: "#top", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { href: "top", label: "Home" },
+  { href: "about", label: "About" },
+  { href: "services", label: "Services" },
+  { href: "faq", label: "FAQ" },
+  { href: "contact", label: "Contact" },
 ];
 
 const serviceLinks = [
@@ -25,10 +27,12 @@ export function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 md:grid-cols-4 md:px-8">
         <div>
-          <span className="font-display text-base font-semibold">Kajal</span>
+          <Link to="/" aria-label="FinScale Advisory home" className="block w-56">
+            <BrandLogo />
+          </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Accounting, taxation and compliance services for individuals, freelancers,
-            startups and MSMEs in Delhi.
+            Finance, tax, accounting and compliance services for individuals, startups and
+            businesses across Delhi NCR.
           </p>
         </div>
 
@@ -37,12 +41,13 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             {quickLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="hover:text-primary">
+                <Link to="/" hash={l.href} className="hover:text-primary">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
+          <Link to="/pricing" className="mt-3 inline-block text-sm font-semibold text-primary">View Pricing</Link>
         </nav>
 
         <div>
@@ -77,7 +82,7 @@ export function Footer() {
 
       <div className="border-t border-border py-6">
         <p className="text-center text-xs text-muted-foreground">
-          © 2026 Kajal Accounting Services
+          © 2026 FinScale Advisory. All rights reserved.
         </p>
       </div>
     </footer>
@@ -95,15 +100,14 @@ export function FloatingActions() {
 
   return (
     <div className="fixed right-5 bottom-5 z-40 flex flex-col items-center gap-3">
-      <a
-        href="https://wa.me/919999999999"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
+      <Link
+        to="/"
+        hash="contact"
+        aria-label="Open consultation form"
         className="flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lift transition-transform hover:-translate-y-1"
       >
         <MessageCircle className="size-5" strokeWidth={1.8} />
-      </a>
+      </Link>
       <a
         href="mailto:kajalmrg7@gmail.com"
         aria-label="Send an email"

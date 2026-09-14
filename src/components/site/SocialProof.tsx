@@ -83,7 +83,7 @@ export function Testimonials() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -30 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl border border-border bg-background/80 p-9 shadow-card backdrop-blur-sm"
+            className="border border-border bg-background p-9 shadow-card"
           >
             <Quote className="size-6 text-primary" strokeWidth={1.6} />
             <blockquote className="mt-5 font-display text-lg leading-relaxed font-medium md:text-xl">
@@ -128,16 +128,12 @@ export function GrowthBanner() {
   return (
     <Section className="py-16 md:py-20">
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground md:px-16">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-24 -right-16 size-72 rounded-full bg-primary-foreground/10"
-          />
+        <div className="relative overflow-hidden border-t-4 border-gold bg-primary px-8 py-14 text-center text-primary-foreground md:px-16">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Need Expert Accounting &amp; Tax Assistance?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm opacity-90 md:text-base">
-            Book your free consultation today and get a clear plan for your compliance.
+            Book a consultation with FinScale Advisory and get a clear plan for your compliance.
           </p>
           <a
             href="#contact"

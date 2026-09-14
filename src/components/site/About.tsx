@@ -1,5 +1,4 @@
 import { Reveal, Section, SectionHeading } from "./primitives";
-import portrait from "@/assets/kajal-portrait.jpg";
 
 const timeline = [
   { title: "Financial Accounting", note: "Accurate books, ledgers and reconciliations" },
@@ -15,20 +14,20 @@ export function About() {
     <Section id="about">
       <div className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal x={-24} y={0}>
-          <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-border shadow-card">
-              <img
-                src={portrait}
-                alt="Kajal, Accounting and Tax Consultant based in Delhi"
-                width={912}
-                height={1104}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="absolute -right-4 -bottom-6 hidden rounded-2xl border border-border bg-background px-5 py-4 shadow-card sm:block">
-              <p className="font-display text-2xl font-semibold text-primary">8+</p>
-              <p className="text-xs text-muted-foreground">Years advising clients</p>
+          <div className="border-t-4 border-gold bg-primary px-8 py-12 text-primary-foreground md:px-12 md:py-16">
+            <p className="text-xs font-semibold tracking-[0.16em] uppercase opacity-70">FinScale approach</p>
+            <blockquote className="mt-6 font-display text-3xl leading-snug font-semibold md:text-4xl">
+              “Good financial work should create confidence—not complexity.”
+            </blockquote>
+            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-primary-foreground/20 pt-7">
+              <div>
+                <p className="font-display text-3xl font-semibold text-gold">8+</p>
+                <p className="mt-1 text-xs uppercase opacity-70">Years advising clients</p>
+              </div>
+              <div>
+                <p className="font-display text-3xl font-semibold text-gold">Delhi</p>
+                <p className="mt-1 text-xs uppercase opacity-70">Local, online support</p>
+              </div>
             </div>
           </div>
         </Reveal>
@@ -36,9 +35,9 @@ export function About() {
         <div>
           <SectionHeading
             align="left"
-            eyebrow="About"
-            title="About Kajal"
-            subtitle="Kajal is an experienced Accounting and Tax Consultant based in Delhi, providing comprehensive financial and compliance solutions to individuals, startups, and businesses. She specializes in accounting, taxation, GST compliance, TDS, bookkeeping, financial reporting, and business registrations."
+            eyebrow="The professional behind FinScale"
+            title="Personal expertise. Professional standards."
+            subtitle="Kajal is an experienced Accounting and Tax Consultant based in Delhi, providing comprehensive financial and compliance solutions through FinScale Advisory for individuals, startups and established businesses."
           />
           <Reveal delay={0.1}>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">

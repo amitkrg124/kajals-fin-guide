@@ -63,11 +63,11 @@ export function SectionHeading({
   return (
     <Reveal className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
       {eyebrow && (
-        <span className="inline-block rounded-full border border-border bg-accent px-3 py-1 text-xs font-medium tracking-wide text-accent-foreground uppercase">
+        <span className="inline-block border-l-2 border-gold pl-3 text-xs font-semibold tracking-[0.16em] text-primary uppercase">
           {eyebrow}
         </span>
       )}
-      <h2 className="mt-4 text-3xl font-semibold md:text-4xl">{title}</h2>
+      <h2 className="mt-4 text-3xl leading-tight font-semibold md:text-4xl">{title}</h2>
       {subtitle && (
         <p className="mt-4 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
       )}

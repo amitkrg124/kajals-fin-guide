@@ -8,6 +8,10 @@ import { Reveal, Section, SectionHeading } from "./primitives";
 
 const faqs = [
   {
+    q: "Are the listed prices final?",
+    a: "Prices shown are starting rates in Indian rupees. The final fee depends on transaction volume, complexity and pending work. GST is charged extra where applicable.",
+  },
+  {
     q: "How long does GST Registration take?",
     a: "With complete documents, GST registration is usually granted within 3–7 working days. We prepare and track the application until the GSTIN is issued.",
   },

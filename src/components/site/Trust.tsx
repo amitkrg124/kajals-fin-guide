@@ -61,8 +61,8 @@ export function WhyChoose() {
   return (
     <Section>
       <SectionHeading
-        eyebrow="Why Kajal"
-        title="Why clients choose to work with Kajal"
+        eyebrow="Why FinScale"
+        title="Advice built on accuracy and accountability"
       />
       <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {reasons.map((r, i) => (
