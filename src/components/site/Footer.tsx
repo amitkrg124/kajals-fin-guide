@@ -100,15 +100,14 @@ export function FloatingActions() {
 
   return (
     <div className="fixed right-5 bottom-5 z-40 flex flex-col items-center gap-3">
-      <a
-        href="https://wa.me/919999999999"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
+      <Link
+        to="/"
+        hash="contact"
+        aria-label="Open consultation form"
         className="flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lift transition-transform hover:-translate-y-1"
       >
         <MessageCircle className="size-5" strokeWidth={1.8} />
-      </a>
+      </Link>
       <a
         href="mailto:kajalmrg7@gmail.com"
         aria-label="Send an email"

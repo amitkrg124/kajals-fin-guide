@@ -8,7 +8,7 @@ export function BrandLogo({ className }: { className?: string }) {
       alt="FinScale Advisory — Finance, Tax and Accounting"
       width={1850}
       height={640}
-      className={cn("h-auto w-full object-contain object-left", className)}
+      className={cn("h-11 w-auto max-w-full object-contain object-left", className)}
     />
   );
 }

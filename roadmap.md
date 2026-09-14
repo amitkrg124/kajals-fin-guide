@@ -4,4 +4,4 @@
 - [x] Add pricing summaries to services
 - [x] Build dedicated pricing page
 - [x] Update SEO, structured data, navigation, and sitemap
-- [ ] Verify desktop and mobile presentation
+- [x] Verify desktop and mobile presentation

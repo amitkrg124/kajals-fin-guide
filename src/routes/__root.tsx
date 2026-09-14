@@ -112,7 +112,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "IN",
           },
           founder: { "@type": "Person", name: "Kajal", jobTitle: "Accountant & Tax Consultant" },
-          openingHours: "Mo-Sa 09:00-19:00",
         }),
       },
     ],
