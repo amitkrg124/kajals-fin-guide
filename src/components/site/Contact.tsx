@@ -29,6 +29,10 @@ const services = [
   "Financial Reports",
   "Payroll",
   "ROC Compliance",
+  "Company Registration",
+  "EPF / ESIC Registration",
+  "Auditing",
+  "Digital Signature (DSC)",
 ];
 
 export function Contact() {
@@ -66,7 +70,7 @@ export function Contact() {
     <Section id="contact" muted>
       <SectionHeading
         eyebrow="Contact"
-        title="Book your free consultation"
+        title="Speak with FinScale Advisory"
         subtitle="Share your requirement and receive a response, usually within a few hours."
       />
 

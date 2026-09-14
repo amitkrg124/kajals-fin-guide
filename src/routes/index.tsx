@@ -11,9 +11,9 @@ import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer, FloatingActions } from "@/components/site/Footer";
 
-const TITLE = "Accounting & Tax Consultant in Delhi | Kajal";
+const TITLE = "FinScale Advisory | Tax & Accounting Delhi";
 const DESCRIPTION =
-  "Kajal offers GST, income tax, TDS, bookkeeping, payroll and MSME registration services in Delhi for individuals, freelancers, startups and businesses.";
+  "FinScale Advisory offers GST, income tax, TDS, bookkeeping, payroll and registration services in Delhi for individuals and businesses.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://kajals-fin-guide.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://kajals-fin-guide.lovable.app/" }],
   }),
   component: Index,
 });

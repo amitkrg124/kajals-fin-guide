@@ -77,22 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kajal — Accounting & Tax Consultant in Delhi" },
-      {
-        name: "description",
-        content:
-          "Expert accounting, GST, income tax, TDS and compliance services in Delhi for individuals, freelancers, startups and MSMEs.",
-      },
-      { name: "author", content: "Kajal Accounting Services" },
-      { property: "og:site_name", content: "Kajal Accounting Services" },
+      { name: "author", content: "FinScale Advisory" },
+      { property: "og:site_name", content: "FinScale Advisory" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Kajal — Accounting & Tax Consultant in Delhi" },
-      { name: "twitter:title", content: "Kajal — Accounting & Tax Consultant in Delhi" },
-      { property: "og:description", content: "Expert accounting, GST, income tax, TDS and compliance services in Delhi for individuals, freelancers, startups and MSMEs." },
-      { name: "twitter:description", content: "Expert accounting, GST, income tax, TDS and compliance services in Delhi for individuals, freelancers, startups and MSMEs." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/970a4073-7041-4a6b-9a15-16057d5ade1f/id-preview-b965693e--5aecfd1c-0889-47fa-aca0-668fb021137d.lovable.app-1785335042684.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/970a4073-7041-4a6b-9a15-16057d5ade1f/id-preview-b965693e--5aecfd1c-0889-47fa-aca0-668fb021137d.lovable.app-1785335042684.png" },
     ],
     links: [
       {
@@ -103,9 +91,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [
       {
@@ -113,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["ProfessionalService", "AccountingService", "LocalBusiness"],
-          name: "Kajal Accounting Services",
+          name: "FinScale Advisory",
           description:
             "Accounting, taxation, GST, TDS, payroll and compliance services in Delhi, India.",
           email: "kajalmrg7@gmail.com",
