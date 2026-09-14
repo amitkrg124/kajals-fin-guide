@@ -1,5 +1,5 @@
 import { Reveal, Section, SectionHeading } from "./primitives";
-import portrait from "@/assets/kajal-portrait.jpg";
+import portraitAsset from "@/assets/kajal-professional-portrait.png.asset.json";
 
 const timeline = [
   { title: "Financial Accounting", note: "Accurate books, ledgers and reconciliations" },
@@ -16,17 +16,17 @@ export function About() {
       <div className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal x={-24} y={0}>
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-border shadow-card">
+            <div className="overflow-hidden border border-border shadow-card">
               <img
-                src={portrait}
+                src={portraitAsset.url}
                 alt="Kajal, Accounting and Tax Consultant based in Delhi"
                 width={912}
                 height={1104}
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="aspect-[4/5] h-full w-full object-cover object-top"
               />
             </div>
-            <div className="absolute -right-4 -bottom-6 hidden rounded-2xl border border-border bg-background px-5 py-4 shadow-card sm:block">
+            <div className="absolute -right-4 -bottom-6 hidden border border-border bg-background px-5 py-4 shadow-card sm:block">
               <p className="font-display text-2xl font-semibold text-primary">8+</p>
               <p className="text-xs text-muted-foreground">Years advising clients</p>
             </div>
@@ -36,9 +36,9 @@ export function About() {
         <div>
           <SectionHeading
             align="left"
-            eyebrow="About"
-            title="About Kajal"
-            subtitle="Kajal is an experienced Accounting and Tax Consultant based in Delhi, providing comprehensive financial and compliance solutions to individuals, startups, and businesses. She specializes in accounting, taxation, GST compliance, TDS, bookkeeping, financial reporting, and business registrations."
+            eyebrow="The professional behind FinScale"
+            title="Personal expertise. Professional standards."
+            subtitle="Kajal is an experienced Accounting and Tax Consultant based in Delhi, providing comprehensive financial and compliance solutions through FinScale Advisory for individuals, startups and established businesses."
           />
           <Reveal delay={0.1}>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">

@@ -10,7 +10,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <Section muted className="py-14 md:py-16">
+    <Section className="border-b border-border py-12 md:py-14">
       <dl className="grid grid-cols-2 gap-8 md:grid-cols-5">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08} className="text-center">

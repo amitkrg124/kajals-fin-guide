@@ -3,6 +3,8 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { BrandLogo } from "./BrandLogo";
 
 const links = [
   { id: "about", label: "About" },
@@ -16,6 +18,7 @@ export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -56,23 +59,16 @@ export function SiteNav() {
         aria-label="Main"
         className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4 md:px-8"
       >
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-primary font-display text-sm font-semibold text-primary-foreground">
-            K
-          </span>
-          <span className="font-display text-base leading-tight font-semibold">
-            Kajal
-            <span className="block text-[11px] font-medium tracking-wide text-muted-foreground uppercase">
-              Accounting &amp; Tax
-            </span>
-          </span>
-        </a>
+        <Link to="/" aria-label="FinScale Advisory home" className="w-48 sm:w-56">
+          <BrandLogo />
+        </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
+          {links.slice(0, 3).map((l) => (
             <li key={l.id}>
-              <a
-                href={`#${l.id}`}
+              <Link
+                to="/"
+                hash={l.id}
                 className={cn(
                   "relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
                   active === l.id && "text-primary",
@@ -85,14 +81,19 @@ export function SiteNav() {
                     className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-primary"
                   />
                 )}
-              </a>
+              </Link>
             </li>
           ))}
+          <li>
+            <Link to="/pricing" className={cn("text-sm font-medium text-muted-foreground transition-colors hover:text-foreground", pathname === "/pricing" && "text-primary")}>
+              Pricing
+            </Link>
+          </li>
         </ul>
 
         <div className="hidden md:block">
           <Button asChild size="sm">
-            <a href="#contact">Book Free Consultation</a>
+            <Link to="/" hash="contact">Book Consultation</Link>
           </Button>
         </div>
 
@@ -116,18 +117,22 @@ export function SiteNav() {
           <ul className="space-y-1 px-5 py-4">
             {links.map((l) => (
               <li key={l.id}>
-                <a
-                  href={`#${l.id}`}
+                <Link
+                  to="/"
+                  hash={l.id}
                   onClick={() => setOpen(false)}
                   className="block rounded-md px-2 py-2.5 text-sm font-medium text-muted-foreground"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
+            <li>
+              <Link to="/pricing" onClick={() => setOpen(false)} className="block rounded-md px-2 py-2.5 text-sm font-medium text-muted-foreground">Pricing</Link>
+            </li>
             <li className="pt-2">
               <Button asChild className="w-full" onClick={() => setOpen(false)}>
-                <a href="#contact">Book Free Consultation</a>
+                <Link to="/" hash="contact">Book Consultation</Link>
               </Button>
             </li>
           </ul>
