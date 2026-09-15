@@ -77,10 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "FinScale Advisory" },
+      { name: "author", content: "FinScale Advisory — Kajal" },
       { property: "og:site_name", content: "FinScale Advisory" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "keywords",
+        content:
+          "accounting services delhi, tax consultant delhi, GST registration delhi, ITR filing online, TDS return filing, bookkeeping services delhi, MSME registration, income tax consultant, FinScale Advisory, business compliance delhi, Kajal accounting consultant",
+      },
+      { name: "geo.region", content: "IN-DL" },
+      { name: "geo.placename", content: "Delhi" },
+      { name: "geo.position", content: "28.6139;77.2090" },
+      { name: "ICBM", content: "28.6139, 77.2090" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
     ],
     links: [
       {
@@ -91,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
@@ -100,18 +110,59 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": ["ProfessionalService", "AccountingService", "LocalBusiness"],
+          "@type": ["AccountingService", "FinancialService", "ProfessionalService", "LocalBusiness"],
           name: "FinScale Advisory",
+          alternateName: "FinScale Advisory Delhi",
+          image: "https://kajals-fin-guide.lovable.app/finscale-advisory-logo.png",
+          logo: "https://kajals-fin-guide.lovable.app/finscale-advisory-logo.png",
           description:
-            "Accounting, taxation, GST, TDS, payroll and compliance services in Delhi, India.",
+            "Trusted Accounting, GST, Income Tax (ITR), TDS, Bookkeeping, MSME, and compliance services in Delhi NCR led by Kajal with 4+ years experience and 50+ clients.",
           email: "kajalmrg7@gmail.com",
-          areaServed: "Delhi, India",
+          priceRange: "₹₹",
+          areaServed: [
+            { "@type": "City", name: "Delhi" },
+            { "@type": "City", name: "New Delhi" },
+            { "@type": "City", name: "Noida" },
+            { "@type": "City", name: "Gurugram" },
+            { "@type": "Country", name: "India" },
+          ],
           address: {
             "@type": "PostalAddress",
             addressLocality: "Delhi",
+            addressRegion: "Delhi",
             addressCountry: "IN",
           },
-          founder: { "@type": "Person", name: "Kajal", jobTitle: "Accountant & Tax Consultant" },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: "28.6139",
+            longitude: "77.2090",
+          },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              opens: "09:00",
+              closes: "19:00",
+            },
+          ],
+          founder: {
+            "@type": "Person",
+            name: "Kajal",
+            jobTitle: "Accounting & Tax Consultant",
+            description: "4+ years experience advising 50+ clients with 100+ GST registrations and returns.",
+          },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Financial & Tax Services",
+            itemListElement: [
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "GST Registration & Return Filing" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Income Tax Return (ITR) Filing" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Accounting & Bookkeeping Services" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "TDS Filing & Compliance" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "MSME / Udyam Registration" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Payroll Management" } },
+            ],
+          },
         }),
       },
     ],
@@ -141,7 +192,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );

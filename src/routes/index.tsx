@@ -11,9 +11,9 @@ import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer, FloatingActions } from "@/components/site/Footer";
 
-const TITLE = "FinScale Advisory | Tax & Accounting Delhi";
+const TITLE = "FinScale Advisory | Expert Accounting & Tax Consultant in Delhi | Kajal";
 const DESCRIPTION =
-  "FinScale Advisory offers GST, income tax, TDS, bookkeeping, payroll and registration services in Delhi for individuals and businesses.";
+  "Trusted Accounting, GST, Income Tax (ITR), TDS, Bookkeeping & MSME registration in Delhi NCR. 4+ years experience, 50+ clients, 100+ GST registrations. Book a consultation!";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,7 +24,12 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://kajals-fin-guide.lovable.app/" },
+      { property: "og:image", content: "https://kajals-fin-guide.lovable.app/finscale-advisory-logo.png" },
+      { property: "og:image:alt", content: "FinScale Advisory Logo and Services" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "https://kajals-fin-guide.lovable.app/finscale-advisory-logo.png" },
     ],
     links: [{ rel: "canonical", href: "https://kajals-fin-guide.lovable.app/" }],
   }),

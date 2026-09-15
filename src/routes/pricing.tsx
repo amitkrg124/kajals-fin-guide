@@ -47,14 +47,63 @@ const groups = [
 ];
 
 const gstPlans = [
-  { name: "GST Registration", price: "₹899", cadence: "onwards", note: "End-to-end GSTIN allotment" },
-  { name: "NIL GST Filing", price: "₹499", cadence: "/ month", note: "No monthly outward transactions" },
-  { name: "Monthly GST Filing", price: "₹999", cadence: "/ month", note: "GSTR-1 + 3B and ITC reconciliation", popular: true },
-  { name: "Quarterly GST Filing", price: "₹2,499", cadence: "/ quarter", note: "QRMP scheme filings" },
+  {
+    name: "GST Registration",
+    description: "End-to-end GSTIN allotment for new businesses.",
+    price: "₹899",
+    cadence: "onwards",
+    features: [
+      "Document review & support",
+      "ARN generation",
+      "Officer follow-up",
+      "GSTIN delivery",
+      "Post-registration advisory",
+    ],
+  },
+  {
+    name: "NIL GST Filing",
+    description: "For businesses with no monthly outward transactions.",
+    price: "₹499",
+    cadence: "/ month",
+    features: [
+      "GSTR-1 NIL filing",
+      "GSTR-3B NIL filing",
+      "Late-fee protection",
+      "Compliance reminders",
+    ],
+  },
+  {
+    name: "Monthly GST Filing",
+    description: "For active businesses filing monthly returns.",
+    price: "₹999",
+    cadence: "/ month",
+    popular: true,
+    features: [
+      "GSTR-1 filing",
+      "GSTR-3B filing",
+      "Invoice recording",
+      "ITC reconciliation",
+      "Dedicated support",
+    ],
+  },
+  {
+    name: "Quarterly GST Filing",
+    description: "QRMP scheme filings with quarterly support.",
+    price: "₹2,499",
+    cadence: "/ quarter",
+    features: [
+      "GSTR-1 (Quarterly)",
+      "GSTR-3B (Quarterly)",
+      "Invoice recording",
+      "ITC reconciliation",
+      "Quarterly compliance",
+    ],
+  },
 ];
 
-const TITLE = "Accounting & GST Pricing | FinScale Advisory";
-const DESCRIPTION = "Transparent starting prices for GST, ITR, TDS, accounting, company registration and compliance services from FinScale Advisory.";
+const TITLE = "Accounting & GST Pricing Delhi | FinScale Advisory";
+const DESCRIPTION =
+  "Transparent pricing for GST registration, ITR filing, TDS, bookkeeping, and company registration in Delhi NCR by FinScale Advisory.";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -65,7 +114,10 @@ export const Route = createFileRoute("/pricing")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://kajals-fin-guide.lovable.app/pricing" },
+      { property: "og:image", content: "https://kajals-fin-guide.lovable.app/finscale-advisory-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "https://kajals-fin-guide.lovable.app/pricing" }],
   }),
@@ -77,34 +129,154 @@ function PricingPage() {
     <div className="min-h-screen bg-background">
       <SiteNav />
       <main>
-        <section className="border-b border-border bg-primary pt-32 pb-20 text-primary-foreground md:pt-40 md:pb-24">
+        {/* Modern Bright Header Section */}
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-surface/80 via-background to-background pt-32 pb-16 md:pt-40 md:pb-20">
           <div className="mx-auto max-w-6xl px-5 md:px-8">
-            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="border-l-2 border-gold pl-3 text-xs font-semibold tracking-[0.16em] uppercase">
-              Transparent fees
-            </motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }} className="mt-6 max-w-3xl text-4xl leading-tight font-semibold md:text-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 border-l-2 border-gold pl-3 text-xs font-semibold tracking-[0.16em] text-primary uppercase"
+            >
+              <span className="size-1.5 rounded-full bg-primary" />
+              <span>Transparent Fees &amp; Retainers</span>
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.08, duration: 0.6 }}
+              className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl"
+            >
               Clear pricing for essential financial work.
             </motion.h1>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.16 }} className="mt-6 max-w-2xl text-base leading-relaxed opacity-80 md:text-lg">
-              Start with a published price, then receive a precise scope before work begins. No hidden service charges.
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.16, duration: 0.6 }}
+              className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
+            >
+              Start with a published price, then receive a precise scope before work begins. No hidden service charges or unexpected invoices.
             </motion.p>
           </div>
         </section>
 
+        {/* GST Filing Plans Section */}
+        <section className="border-b border-border bg-slate-50/50 py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-5 md:px-8">
+            <div className="max-w-2xl">
+              <p className="border-l-2 border-gold pl-3 text-xs font-semibold tracking-[0.16em] text-primary uppercase">
+                GST Plans
+              </p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                Choose the filing rhythm that fits
+              </h2>
+              <p className="mt-3 text-sm text-muted-foreground md:text-base">
+                Practical GST support for new registrations, nil returns and active businesses.
+              </p>
+            </div>
+
+            {/* Exact Grid matching user screenshot */}
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+              {gstPlans.map((plan, index) => (
+                <motion.article
+                  key={plan.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className={`relative flex flex-col justify-between rounded-2xl bg-white p-6 md:p-7 shadow-xs transition-all duration-300 hover:shadow-md ${
+                    plan.popular
+                      ? "border-2 border-primary ring-1 ring-primary/20 shadow-lg lg:-translate-y-2 z-10"
+                      : "border border-slate-200/90"
+                  }`}
+                >
+                  {/* Floating Most Popular Badge */}
+                  {plan.popular && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-full bg-amber-500 px-3.5 py-1 text-[10px] font-bold tracking-wider text-slate-950 uppercase shadow-xs">
+                      <Sparkles className="size-3" />
+                      <span>Most Popular</span>
+                    </div>
+                  )}
+
+                  <div>
+                    {/* Header */}
+                    <h3 className="text-lg font-bold text-slate-900">{plan.name}</h3>
+                    <p className="mt-1.5 min-h-[36px] text-xs leading-relaxed text-slate-500">
+                      {plan.description}
+                    </p>
+
+                    {/* Price */}
+                    <div className="mt-5 flex items-baseline gap-1.5">
+                      <span className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+                        {plan.price}
+                      </span>
+                      <span className="text-xs font-normal text-slate-500">
+                        {plan.cadence}
+                      </span>
+                    </div>
+
+                    {/* Features List with green checkmarks */}
+                    <ul className="mt-6 space-y-3 border-t border-slate-100 pt-6">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5 text-xs text-slate-700">
+                          <Check className="mt-0.5 size-4 shrink-0 text-emerald-600 stroke-[2.5]" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Apply Now Button */}
+                  <div className="mt-8 pt-2">
+                    <Button
+                      asChild
+                      className={`w-full rounded-xl py-2.5 text-xs font-semibold shadow-xs transition-all ${
+                        plan.popular
+                          ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-md"
+                          : "border border-slate-200 bg-white text-slate-800 hover:bg-slate-50 hover:text-slate-900"
+                      }`}
+                    >
+                      <Link to="/" hash="contact">
+                        Apply Now
+                      </Link>
+                    </Button>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Other Service Groups */}
         <section className="py-20 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-8">
-            <div className="grid gap-x-14 gap-y-16 lg:grid-cols-2">
+            <div className="max-w-2xl mb-12">
+              <p className="border-l-2 border-gold pl-3 text-xs font-semibold tracking-[0.16em] text-primary uppercase">
+                All Services
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                Comprehensive Compliance Catalog
+              </h2>
+            </div>
+
+            <div className="grid gap-x-14 gap-y-12 lg:grid-cols-2">
               {groups.map((group, index) => (
-                <motion.article key={group.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }}>
-                  <div className="border-b-2 border-primary pb-5">
-                    <p className="text-xs font-semibold tracking-[0.14em] text-gold-foreground uppercase">0{index + 1}</p>
-                    <h2 className="mt-2 text-2xl font-semibold">{group.title}</h2>
+                <motion.article
+                  key={group.title}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="rounded-2xl border border-border bg-card p-6 shadow-card"
+                >
+                  <div className="border-b-2 border-primary/20 pb-5">
+                    <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">0{index + 1}</p>
+                    <h2 className="mt-2 text-2xl font-semibold text-foreground">{group.title}</h2>
                     <p className="mt-2 text-sm text-muted-foreground">{group.description}</p>
                   </div>
                   <dl>
                     {group.services.map(([service, price]) => (
-                      <div key={service} className="grid grid-cols-[1fr_auto] gap-4 border-b border-border py-4">
-                        <dt className="text-sm font-medium">{service}</dt>
+                      <div key={service} className="grid grid-cols-[1fr_auto] gap-4 border-b border-border/80 py-4 last:border-0">
+                        <dt className="text-sm font-medium text-foreground">{service}</dt>
                         <dd className="text-right text-sm font-semibold text-primary">{price}</dd>
                       </div>
                     ))}
@@ -115,42 +287,27 @@ function PricingPage() {
           </div>
         </section>
 
-        <section className="border-y border-border bg-surface py-20 md:py-24">
+        {/* Custom Plan Banner */}
+        <section className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-5 md:px-8">
-            <div className="max-w-2xl">
-              <p className="border-l-2 border-gold pl-3 text-xs font-semibold tracking-[0.16em] text-primary uppercase">GST plans</p>
-              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Choose the filing rhythm that fits</h2>
-              <p className="mt-4 text-muted-foreground">Practical GST support for new registrations, nil returns and active businesses.</p>
+            <div className="grid items-center gap-8 rounded-3xl border border-primary/20 bg-gradient-to-br from-primary via-primary/95 to-primary-dark p-8 text-primary-foreground shadow-lift md:grid-cols-[1fr_auto] md:p-12">
+              <div>
+                <p className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">Custom plan</p>
+                <h2 className="mt-3 text-2xl font-semibold md:text-3xl text-white">Multiple entities or payroll-heavy operations?</h2>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-200">
+                  We’ll prepare a tailored monthly scope based on transaction volume, team size and compliance requirements.
+                </p>
+              </div>
+              <Button asChild size="lg" className="bg-gold text-gold-foreground font-semibold hover:bg-gold/90 shadow-md">
+                <Link to="/" hash="contact" className="flex items-center gap-2">
+                  Request custom plan <ArrowRight className="size-4" />
+                </Link>
+              </Button>
             </div>
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {gstPlans.map((plan) => (
-                <article key={plan.name} className={`relative flex min-h-72 flex-col border bg-background p-6 shadow-card ${plan.popular ? "border-gold border-t-4" : "border-border"}`}>
-                  {plan.popular && <span className="mb-5 inline-flex w-fit items-center gap-1.5 bg-primary px-2.5 py-1 text-[11px] font-semibold tracking-[0.1em] text-primary-foreground uppercase"><Sparkles className="size-3" /> Most popular</span>}
-                  <h3 className="text-lg font-semibold">{plan.name}</h3>
-                  <p className="mt-5 text-3xl font-semibold text-primary">{plan.price}</p>
-                  <p className="mt-1 text-xs font-medium text-muted-foreground">{plan.cadence}</p>
-                  <p className="mt-6 flex gap-2 border-t border-border pt-5 text-sm leading-relaxed text-muted-foreground"><Check className="mt-0.5 size-4 shrink-0 text-gold-foreground" />{plan.note}</p>
-                  <Button asChild variant={plan.popular ? "default" : "outline"} className="mt-auto w-full">
-                    <Link to="/" hash="contact">Choose plan</Link>
-                  </Button>
-                </article>
-              ))}
-            </div>
+            <p className="mt-8 text-center text-xs text-muted-foreground">
+              All prices are in Indian rupees. GST is extra as applicable. Final fees may vary based on complexity, transaction volume and pending compliance.
+            </p>
           </div>
-        </section>
-
-        <section className="py-20 md:py-24">
-          <div className="mx-auto grid max-w-6xl items-center gap-8 border-t-4 border-gold bg-primary px-7 py-12 text-primary-foreground md:grid-cols-[1fr_auto] md:px-12">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.16em] uppercase opacity-75">Custom plan</p>
-              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">Multiple entities or payroll-heavy operations?</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed opacity-80">We’ll prepare a tailored monthly scope based on transaction volume, team size and compliance requirements.</p>
-            </div>
-            <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90">
-              <Link to="/" hash="contact">Request custom plan <ArrowRight /></Link>
-            </Button>
-          </div>
-          <p className="mx-auto mt-8 max-w-6xl px-5 text-center text-xs text-muted-foreground md:px-8">All prices are in Indian rupees. GST is extra. Final fees may vary based on complexity, transaction volume and pending compliance.</p>
         </section>
       </main>
       <Footer />
